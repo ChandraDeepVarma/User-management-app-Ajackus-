@@ -118,3 +118,20 @@ li button:last-child {
 li button:last-child:hover {
   background-color: #c62828;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+  }
+
+  form input,
+  form button {
+    font-size: 0.875rem; /* Slightly smaller font size for inputs and buttons */
+  }
+
+  li {
+    flex-direction: column; /* Stack list items vertically on mobile */
+    align-items: flex-start; /* Align items to the start */
+  }
+}
