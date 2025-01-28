@@ -103,6 +103,7 @@ li button:first-child {
   background-color: #007bff;
   color: white;
   margin-right: 10px;
+  margin-left: auto;
 }
 
 li button:first-child:hover {
