@@ -13,7 +13,9 @@ const App = () => {
   // Fetch users from the server
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/users");
+      const response = await axios.get(
+        "https://json-server77.onrender.com/users"
+      );
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -30,13 +32,13 @@ const App = () => {
       if (editingUser) {
         // Update user logic (PUT request)
         await axios.put(
-          `http://localhost:3001/users/${editingUser.id}`,
+          `https://json-server77.onrender.com/users/${editingUser.id}`,
           userData
         );
         setEditingUser(null);
       } else {
         // Add new user logic (POST request)
-        await axios.post("http://localhost:3001/users", userData);
+        await axios.post("https://json-server77.onrender.com/users", userData);
       }
       setUserData({ name: "", email: "" }); // Reset form
       fetchUsers(); // Refresh the user list
@@ -52,7 +54,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/users/${id}`);
+      await axios.delete(`https://json-server77.onrender.com/users/${id}`);
       fetchUsers(); // Refresh the user list after deletion
     } catch (error) {
       console.error("Error deleting user:", error);
